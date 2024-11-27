@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;  /* coloca os itens na vertical */
+    justify-content: flex-start;  /* coloca o conteúdo no topo */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #141414;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px; 
+}
+
+.controles {
+    margin: 20px;
+}
+
+#reiniciar-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 10px;  /* espaço abaixo do botão */
+}
+
+select {
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.estatisticas {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+/* estilizando a carta */
+.carta {
+    width: 100px;
+    height: 100px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.39); /* sombra */
+    transition: transform 0.5s ease-in-out; /* efeito de rotação quando clica */
+}
+
+/* estilizacao de quando a carta é virada */
+.carta.virada {
+    transform: rotateY(180deg); 
+}
+
+/* escondendo o número antes da rotação */
+.carta .verso {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 2rem;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease 0.5s; /* transição suave para a opacidade com atraso */
+}
+
+/* quando a carta é virada, o número aparece */
+.carta.virada .verso {
+    color: black;  /* mostra conteúdo da carta */
+    transform: rotateY(180deg); /* rotação para o verso */
+    opacity: 1; /* torna visível após a rotação */
+    transition-delay: 0s; /* Remove o atraso para a visibilidade */
+    border-radius: 12px;
+}
+
+.carta.pareada .verso {
+    background-color: #90ee90;  
+    color: black; 
+    transform: rotateY(180deg); /* continua com a rotação */
+    opacity: 1; /* visível após a rotação */
+    border-radius: 12px;
+}
+
+.tabuleiro-jogo {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* arrumar o grid para diferentes quantidades de cartas */
+.tabuleiro-jogo[data-colunas="4"] {
+    grid-template-columns: repeat(4, 100px); /* com 4 colunas */
+}
+
+.tabuleiro-jogo[data-colunas="6"] {
+    grid-template-columns: repeat(6, 100px); /* com 6 colunas */
+}
+
+.tabuleiro-jogo[data-colunas="8"] {
+    grid-template-columns: repeat(8, 100px); /* com 8 colunas */
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    margin: 15px;
+}
