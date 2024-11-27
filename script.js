@@ -137,7 +137,7 @@ function reiniciarJogo() {
 }
 
 //cliques no btn de reiniciar e dificudades
-dificuldadeSelect.addEventListener("click", () => reiniciarJogo());
+dificuldadeSelect.addEventListener("change", () => reiniciarJogo());
 reiniciarBtn.addEventListener("click", reiniciarJogo);
 
 reiniciarJogo();
