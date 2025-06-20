@@ -141,3 +141,37 @@ dificuldadeSelect.addEventListener("change", () => reiniciarJogo());
 reiniciarBtn.addEventListener("click", reiniciarJogo);
 
 reiniciarJogo();
+
+//Desafio Paulinho 04/06/2025
+ 
+-> Criar tela de apresentação consumindo dados de uma API
+  -> Adicionar no AndroidManifest a permissão para consumo de API
+	<uses-permission android:name="android.permission.INTERNET" />
+<application android:supportsRtl="true" />
+   -> Utilizar Lib do Retrofit
+    -> http://localhost:3000/apresentacao
+ 
+-> A tela de apresentação deve conter na parte inferir 2 botões fixos
+   -> O scroll da tela deve acontecer sem que as informações da parte superior deixem de ser mostradas
+   -> Primeiro botão deve abrir um Bottom Sheet Dialog que conterá as informações vindas da API no 
+	Objeto presentationFlow.modal
+       -> Preencher os dados de titulo, subtítulo e descrição + Os textos dos botões
+   -> Segundo Botão deve levar o usuário para uma tela em Branco com um botão no centro com a ação de voltar
+ 
+IMPORTANTE: 
+Utilizar o Material UI para criação das interfaces
+  -> Botões, Sheets: bottom, Lists
+
+-> Commitar todas as alterações
+   -> Commit inicial da estrutura do projeto
+   -> Commit depois de adicionar as libs
+   -> Commit depois de criar as estrutura das telas em XML
+   -> Commit depois de criar as lógicas dentro dos arquivos KT
+Padrão do Commit: 
+Feat: <o que eu fiz>
+ 
+ 
+Links referencia: 
+Criação do Bottom Sheet Dialog: https://medium.com/@stephenmuindi241/bottom-sheet-dialogs-in-android-c13800357df9
+Doc do contrato da API: https://bancopan.atlassian.net/wiki/spaces/PBD/pages/4999446625/EP+FGTS+WL+-+Contrato+do+Fluxo+de+Apresenta+o
+Material UI: https://m2.material.io/components/buttons/android#text-button
